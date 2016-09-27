@@ -32,7 +32,6 @@ module React
           csrf_token: controller.send(:form_authenticity_token)
         })
 
-        props = options.fetch(:props, {})
         options = options
           .slice(:data, :aria, :tag, :class, :id, :prerender)
           .reverse_merge(default_options)
