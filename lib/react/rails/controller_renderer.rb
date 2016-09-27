@@ -27,7 +27,7 @@ module React
 
       # @return [String] Prerendered HTML for `component_name` with `options[:props]`
       def call(component_name, options, &block)
-        props = options.fetch(:props, {}).merge({
+        props = options.fetch(:props, {}).reverse_merge({
           csrf_token: controller.send(:form_authenticity_token)
         })
 
